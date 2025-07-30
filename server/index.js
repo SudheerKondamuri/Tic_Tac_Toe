@@ -11,11 +11,11 @@ var server = http.createServer(app);
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "*", // Or set specific origin like "http://localhost:3000"
+    origin: "*", 
     methods: ["GET", "POST"],
   },
 });
-//middle ware
+
 app.use(express.json())
 
 const DB = "mongodb+srv://sudheer:test123@cluster0.newjoh1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
@@ -41,6 +41,18 @@ io.on("connection", (socket) => {
       } catch (e) {
         console.log(e)
       }
+    })
+    socket.on("joinRoom", async ({nickname,roomId})=> {
+      try{
+        if(!roomId.match(/^[0-9a-fA-F]{24}$/)){
+          socket.on(roomId).emit('invalidRoomId', 'Please enter a valid room id')
+          return
+        }
+      }
+      catch(e){
+        console.log(e)
+      }
+      console.log("joined")
     })
 })
 

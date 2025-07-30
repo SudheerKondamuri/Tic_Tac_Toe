@@ -1,4 +1,6 @@
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
+import 'package:tic_tac_toe/provider/room_data_provider.dart';
 import 'package:tic_tac_toe/resources/socket_client.dart';
 
 class SocketMethods {
@@ -9,8 +11,18 @@ class SocketMethods {
     }
   }
 
+  void joinRoom(String name, String id) {
+    if (name.isNotEmpty && id.isNotEmpty) {
+      _socketClient.emit("joinRoom",{"nickname": name, "roomId": id});
+    }
+  }
+
   void createRoomSuccessListener(BuildContext context) {
     _socketClient.on('createRoomSuccess', (room) {
+      Provider.of<RoomDataProvider>(
+        context,
+        listen: false,
+      ).updateRoomData(room);
       Navigator.pushNamed(context, '/game');
     });
   }

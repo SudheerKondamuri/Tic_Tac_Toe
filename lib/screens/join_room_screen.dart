@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/resources/socket_methods.dart';
 import 'package:tic_tac_toe/responsive/responsive.dart';
 import 'package:tic_tac_toe/widgets/custom_button.dart';
 import 'package:tic_tac_toe/widgets/custom_text.dart';
@@ -27,7 +28,12 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
             CustomText(shadows: [], text: "Join Room", fontSize: 40),
             CustomTextField(controller: _nameCtrl, hintText: "Enter Nickname"),
             CustomTextField(controller: _idCtrl, hintText: "Enter Room Id"),
-            CustomButton(name: "Enter Room", onTap: () {}),
+            CustomButton(
+              name: "Enter Room",
+              onTap: () {
+                SocketMethods().joinRoom(_nameCtrl.text, _idCtrl.text);
+              },
+            ),
           ],
         ),
       ),
