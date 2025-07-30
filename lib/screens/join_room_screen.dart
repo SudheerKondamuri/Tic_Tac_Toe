@@ -17,6 +17,12 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
   final _idCtrl = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    SocketMethods().joinRoomListener(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Responsive(

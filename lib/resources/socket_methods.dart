@@ -13,12 +13,22 @@ class SocketMethods {
 
   void joinRoom(String name, String id) {
     if (name.isNotEmpty && id.isNotEmpty) {
-      _socketClient.emit("joinRoom",{"nickname": name, "roomId": id});
+      _socketClient.emit("joinRoom", {"nickname": name, "roomId": id});
     }
   }
 
   void createRoomSuccessListener(BuildContext context) {
     _socketClient.on('createRoomSuccess', (room) {
+      Provider.of<RoomDataProvider>(
+        context,
+        listen: false,
+      ).updateRoomData(room);
+      Navigator.pushNamed(context, '/game');
+    });
+  }
+
+  void joinRoomListener(BuildContext context) {
+    _socketClient.on('playerJoined', (room) {
       Provider.of<RoomDataProvider>(
         context,
         listen: false,

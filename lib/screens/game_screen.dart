@@ -13,9 +13,9 @@ class _GameScreenState extends State<GameScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(Provider.of<RoomDataProvider>(context).roomData.toString()),
-      ),
+      // body: Center(
+      //   child: Text(Provider.of<RoomDataProvider>(context).roomData.toString()),
+      // ),
     );
   }
 }
