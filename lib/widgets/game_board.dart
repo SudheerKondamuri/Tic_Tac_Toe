@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/model/players_model.dart';
 
 class GameBoard extends StatelessWidget {
   final List<String> board; // Should be a list of 9 elements: '', 'X', or 'O'
   final void Function(int index) onTap; // Called when a cell is tapped
 
-  const GameBoard({
-    Key? key,
-    required this.board,
-    required this.onTap,
-  }) : super(key: key);
+  const GameBoard({super.key, required this.board, required this.onTap});
 
   @override
   Widget build(BuildContext context) {

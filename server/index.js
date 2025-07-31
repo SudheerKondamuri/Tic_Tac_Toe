@@ -63,6 +63,7 @@ io.on("connection", (socket) => {
       room = await room.save();
       socket.join(roomId);
       io.to(roomId).emit("playerJoined", room);
+      io.to(roomId).emit("updatedplayers", room.players);
       console.log("joined");
     } catch (e) {
       console.log(e);

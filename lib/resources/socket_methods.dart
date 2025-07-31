@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:tic_tac_toe/model/players_model.dart';
 import 'package:tic_tac_toe/provider/room_data_provider.dart';
 import 'package:tic_tac_toe/resources/socket_client.dart';
 
@@ -33,6 +34,9 @@ class SocketMethods {
         context,
         listen: false,
       ).updateRoomData(room);
+      _socketClient.on('updatedPlayers',(players){
+        
+      });
       Navigator.pushNamed(context, '/game');
     });
   }

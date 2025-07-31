@@ -7,11 +7,11 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final bool isReadOnly;
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.hintText,
     this.isReadOnly = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
