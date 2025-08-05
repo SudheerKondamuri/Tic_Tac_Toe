@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/model/players_model.dart';
+import 'package:tic_tac_toe/model/player.dart';
+import 'package:tic_tac_toe/utils/colors.dart';
 
 class GameBoard extends StatelessWidget {
   final List<String> board; // Should be a list of 9 elements: '', 'X', or 'O'
@@ -33,7 +34,7 @@ class GameBoard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 48,
                     fontWeight: FontWeight.bold,
-                    color: board[index] == 'X' ? Colors.blue : Colors.red,
+                    color: board[index] == 'X' ? buttonColor : Colors.red,
                   ),
                 ),
               ),

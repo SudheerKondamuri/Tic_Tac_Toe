@@ -9,7 +9,7 @@ import 'package:tic_tac_toe/screens/join_room_screen.dart';
 import 'package:tic_tac_toe/utils/colors.dart';
 
 void main() async {
-  runApp(DevicePreview(builder: (_) => MyApp())  );
+  runApp(DevicePreview(builder: (_) => MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,17 +18,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context)=> RoomDataProvider(),
+      create: (context) => RoomDataProvider(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Tic Tac Toe",
         theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: bgColor),
-      
+
         routes: {
           "/home": (context) => HomeScreen(),
           "/create-room": (context) => CreateRoomScreen(),
           "/join-room": (context) => JoinRoomScreen(),
-          "/game": (context) => GameScreen()
+          "/game": (context) => GameScreen(),
         },
         initialRoute: "/home",
       ),

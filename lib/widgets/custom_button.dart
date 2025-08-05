@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/utils/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String name;
@@ -11,7 +12,7 @@ class CustomButton extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         boxShadow: [
-          BoxShadow(color: Colors.blue, blurRadius: 5, spreadRadius: 0),
+          BoxShadow(color: buttonColor, blurRadius: 5, spreadRadius: 0),
         ],
       ),
       child: ElevatedButton(
@@ -21,7 +22,7 @@ class CustomButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(8),
           ),
-          backgroundColor: Colors.blue,
+          backgroundColor: buttonColor,
           minimumSize: Size(width, 50),
         ),
         child: Text(name),
