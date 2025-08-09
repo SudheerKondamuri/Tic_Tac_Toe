@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:tic_tac_toe/model/player.dart';
 import 'package:tic_tac_toe/provider/room_data_provider.dart';
 import 'package:tic_tac_toe/resources/socket_client.dart';
 

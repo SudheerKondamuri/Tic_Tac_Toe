@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/model/player.dart';
 import 'package:tic_tac_toe/utils/colors.dart';
 
 class GameBoard extends StatelessWidget {

@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
           backgroundColor: buttonColor,
           minimumSize: Size(width, 50),
         ),
-        child: Text(name),
+        child: Text(name, style: TextStyle(color: Colors.black)),
       ),
     );
   }
