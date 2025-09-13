@@ -15,12 +15,14 @@ class RoomDataProvider extends ChangeNotifier {
     points: 0,
     playerType: 'X',
   );
-
+  List<String> board = ["", "", "", "", "", "", "", "", ""];
+  String currentPlayer = "X";
   Map<String, dynamic> get roomData => _roomData;
   Player get player1 => _player1;
   Player get player2 => _player1;
 
   void updateRoomData(Map<String, dynamic> data) {
+    print(data);
     _roomData = data;
     notifyListeners();
   }
@@ -32,6 +34,12 @@ class RoomDataProvider extends ChangeNotifier {
 
   void updatePlayer2(Map<String, dynamic> player2) {
     _player2 = Player.fromMap(player2);
+    notifyListeners();
+  }
+
+  void updateBoard(List<String> newBoard) {
+    board = newBoard;
+    currentPlayer = currentPlayer == "X" ? "O" : "X";
     notifyListeners();
   }
 }

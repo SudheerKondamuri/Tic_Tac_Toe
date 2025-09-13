@@ -1,6 +1,5 @@
 const mongoose = require("mongoose")
 const playerSchema = require("./player")
-
 const roomSchema = new mongoose.Schema({
     occupancy: {
         type: Number,
@@ -8,7 +7,7 @@ const roomSchema = new mongoose.Schema({
     },
     maxRounds:{
         type: Number,
-        defualt: 6
+        default: 6
     },
     currentRound:{
         required: true,
@@ -18,14 +17,18 @@ const roomSchema = new mongoose.Schema({
     players:[playerSchema],
     isJoin:{
         type: Boolean,
-        defualt: true
+        default: true
     },
     turn: playerSchema,
     turnIndex:{
         type: Number,
-        defualt: 0
+        default: 0
+    },
+    board: {
+        type: [String],
+        default: ["", "", "", "", "", "", "", "", ""]
     }
-
+    
 });
 const roomModel = mongoose.model('Room',roomSchema);
  module.exports = roomModel

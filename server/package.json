@@ -9,14 +9,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",  
+  "description": "",
   "devDependencies": {
     "nodemon": "^3.1.10"
   },
   "dependencies": {
     "express": "^5.1.0",
-    "mongodb": "^6.18.0",
-    "mongoose": "^8.16.5",
+    "mongodb": "^6.19.0",
+    "mongoose": "^8.18.1",
     "socket.io": "^4.8.1"
   }
 }

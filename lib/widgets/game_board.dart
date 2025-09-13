@@ -33,7 +33,7 @@ class GameBoard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 48,
                     fontWeight: FontWeight.bold,
-                    color: board[index] == 'X' ? buttonColor : Colors.red,
+                    color: board[index] == 'X' ? Colors.blue : Colors.red,
                   ),
                 ),
               ),
